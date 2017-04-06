@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ReferenceGroup xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" ID="2f1acb42-6550-47c8-a77e-398ccef5e093" xmlns="urn:schemas-microsoft-com:xml-wcfservicemap">
+  <ClientOptions>
+    <GenerateAsynchronousMethods>false</GenerateAsynchronousMethods>
+    <GenerateTaskBasedAsynchronousMethod>true</GenerateTaskBasedAsynchronousMethod>
+    <EnableDataBinding>true</EnableDataBinding>
+    <ExcludedTypes />
+    <ImportXmlTypes>false</ImportXmlTypes>
+    <GenerateInternalTypes>false</GenerateInternalTypes>
+    <GenerateMessageContracts>false</GenerateMessageContracts>
+    <NamespaceMappings />
+    <CollectionMappings />
+    <GenerateSerializableTypes>true</GenerateSerializableTypes>
+    <Serializer>Auto</Serializer>
+    <UseSerializerForFaults>true</UseSerializerForFaults>
+    <ReferenceAllAssemblies>true</ReferenceAllAssemblies>
+    <ReferencedAssemblies />
+    <ReferencedDataContractTypes />
+    <ServiceContractMappings />
+  </ClientOptions>
+  <MetadataSources>
+    <MetadataSource Address="http://abrgoa01apcp03d/BIW_SFM/C191.C191CLA.PLCS_001" Protocol="http" SourceId="1" />
+  </MetadataSources>
+  <Metadata>
+    <MetadataFile FileName="C191.xsd" MetadataType="Schema" ID="e574c34c-95a0-4df4-aa61-e0997bd7f5cb" SourceId="1" SourceUrl="http://abrgoa01apcp03d/BIW_SFM/C191.C191CLA.PLCS_001?xsd=xsd2" />
+    <MetadataFile FileName="C1911.xsd" MetadataType="Schema" ID="eb4ce10e-692e-441d-ae1b-98d9ac748a64" SourceId="1" SourceUrl="http://abrgoa01apcp03d/BIW_SFM/C191.C191CLA.PLCS_001?xsd=xsd3" />
+    <MetadataFile FileName="C1912.xsd" MetadataType="Schema" ID="9cbec7de-720c-4459-876f-66102830d51d" SourceId="1" SourceUrl="http://abrgoa01apcp03d/BIW_SFM/C191.C191CLA.PLCS_001?xsd=xsd0" />
+    <MetadataFile FileName="C1913.xsd" MetadataType="Schema" ID="3b592485-07ce-4603-aaa2-2396c40e4944" SourceId="1" SourceUrl="http://abrgoa01apcp03d/BIW_SFM/C191.C191CLA.PLCS_001?xsd=xsd1" />
+    <MetadataFile FileName="C191.disco" MetadataType="Disco" ID="c16339af-43d0-4077-b560-99454169c2c3" SourceId="1" SourceUrl="http://abrgoa01apcp03d/BIW_SFM/C191.C191CLA.PLCS_001?disco" />
+    <MetadataFile FileName="BIW_SFM_GUI.wsdl" MetadataType="Wsdl" ID="805aab46-ad63-4a58-b6f0-54625b07f0cf" SourceId="1" SourceUrl="http://abrgoa01apcp03d/BIW_SFM/C191.C191CLA.PLCS_001?wsdl" />
+  </Metadata>
+  <Extensions>
+    <ExtensionFile FileName="configuration91.svcinfo" Name="configuration91.svcinfo" />
+    <ExtensionFile FileName="configuration.svcinfo" Name="configuration.svcinfo" />
+  </Extensions>
+</ReferenceGroup>

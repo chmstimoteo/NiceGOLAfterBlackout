@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ReferenceGroup xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" ID="297bfb56-90be-4d07-a5ef-d5026d13eb0c" xmlns="urn:schemas-microsoft-com:xml-wcfservicemap">
+  <ClientOptions>
+    <GenerateAsynchronousMethods>false</GenerateAsynchronousMethods>
+    <GenerateTaskBasedAsynchronousMethod>true</GenerateTaskBasedAsynchronousMethod>
+    <EnableDataBinding>true</EnableDataBinding>
+    <ExcludedTypes />
+    <ImportXmlTypes>false</ImportXmlTypes>
+    <GenerateInternalTypes>false</GenerateInternalTypes>
+    <GenerateMessageContracts>false</GenerateMessageContracts>
+    <NamespaceMappings />
+    <CollectionMappings />
+    <GenerateSerializableTypes>true</GenerateSerializableTypes>
+    <Serializer>Auto</Serializer>
+    <UseSerializerForFaults>true</UseSerializerForFaults>
+    <ReferenceAllAssemblies>true</ReferenceAllAssemblies>
+    <ReferencedAssemblies />
+    <ReferencedDataContractTypes />
+    <ServiceContractMappings />
+  </ClientOptions>
+  <MetadataSources>
+    <MetadataSource Address="http://test.mes.goa.fiatauto.com/BIWService/Service.svc" Protocol="http" SourceId="1" />
+  </MetadataSources>
+  <Metadata>
+    <MetadataFile FileName="Service3.xsd" MetadataType="Schema" ID="a1d8b3fa-fa33-4041-9b3a-4684b5102423" SourceId="1" SourceUrl="http://abrgoa01wbcc010.fiatauto.adfa.local/BIWService/Service.svc?xsd=xsd2" />
+    <MetadataFile FileName="Service31.xsd" MetadataType="Schema" ID="795880b3-ac51-4083-bca8-8e224cb084f3" SourceId="1" SourceUrl="http://abrgoa01wbcc010.fiatauto.adfa.local/BIWService/Service.svc?xsd=xsd1" />
+    <MetadataFile FileName="Service1.wsdl" MetadataType="Wsdl" ID="e010a6df-7c94-475a-a59c-ea8f2904687c" SourceId="1" SourceUrl="http://abrgoa01wbcc010.fiatauto.adfa.local/BIWService/Service.svc?wsdl" />
+    <MetadataFile FileName="Service32.xsd" MetadataType="Schema" ID="e5acd157-33c9-4128-a82d-3dd218a29056" SourceId="1" SourceUrl="http://abrgoa01wbcc010.fiatauto.adfa.local/BIWService/Service.svc?xsd=xsd0" />
+    <MetadataFile FileName="Service1.disco" MetadataType="Disco" ID="57fa63e8-7f58-4c7f-88b0-751ea1703ea9" SourceId="1" SourceUrl="http://abrgoa01wbcc010.fiatauto.adfa.local/BIWService/Service.svc?disco" />
+  </Metadata>
+  <Extensions>
+    <ExtensionFile FileName="configuration91.svcinfo" Name="configuration91.svcinfo" />
+    <ExtensionFile FileName="configuration.svcinfo" Name="configuration.svcinfo" />
+  </Extensions>
+</ReferenceGroup>

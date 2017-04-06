@@ -1,0 +1,253 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:tns="http://schemas.datacontract.org/2004/07/BIW_SFM" elementFormDefault="qualified" targetNamespace="http://schemas.datacontract.org/2004/07/BIW_SFM" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:import schemaLocation="http://abrgoa01apcp03d/BIW_SFM/C191.C191CLA.SCC_001?xsd=xsd1" namespace="http://schemas.microsoft.com/2003/10/Serialization/" />
+  <xs:simpleType name="BIW_SFM_Activity.STATO_GOL">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="REMOTO">
+        <xs:annotation>
+          <xs:appinfo>
+            <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">1</EnumerationValue>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="LOCALE">
+        <xs:annotation>
+          <xs:appinfo>
+            <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">2</EnumerationValue>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="AUTOGENERANTE">
+        <xs:annotation>
+          <xs:appinfo>
+            <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">3</EnumerationValue>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="MANUALE">
+        <xs:annotation>
+          <xs:appinfo>
+            <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">4</EnumerationValue>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="UPDATESTRUTTURA">
+        <xs:annotation>
+          <xs:appinfo>
+            <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">5</EnumerationValue>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:enumeration>
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:element name="BIW_SFM_Activity.STATO_GOL" nillable="true" type="tns:BIW_SFM_Activity.STATO_GOL" />
+  <xs:simpleType name="ACK_PLC">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="ERRORE">
+        <xs:annotation>
+          <xs:appinfo>
+            <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">-1</EnumerationValue>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="PLC_TIMEOUT_ACK">
+        <xs:annotation>
+          <xs:appinfo>
+            <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">0</EnumerationValue>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="ACK_OK">
+        <xs:annotation>
+          <xs:appinfo>
+            <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">1</EnumerationValue>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="ACK_LISTA_PIENA">
+        <xs:annotation>
+          <xs:appinfo>
+            <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">2</EnumerationValue>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="ACK_STRPRD_NOK">
+        <xs:annotation>
+          <xs:appinfo>
+            <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">3</EnumerationValue>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="ACK_SSC_NOK">
+        <xs:annotation>
+          <xs:appinfo>
+            <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">4</EnumerationValue>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="ACK_CSS_NOK">
+        <xs:annotation>
+          <xs:appinfo>
+            <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">5</EnumerationValue>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="ACK_CF_NOK">
+        <xs:annotation>
+          <xs:appinfo>
+            <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">6</EnumerationValue>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="ACK_SeqNr_NOK">
+        <xs:annotation>
+          <xs:appinfo>
+            <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">7</EnumerationValue>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="ACK_TIO_SLAVE">
+        <xs:annotation>
+          <xs:appinfo>
+            <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">8</EnumerationValue>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:enumeration>
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:element name="ACK_PLC" nillable="true" type="tns:ACK_PLC" />
+  <xs:complexType name="STATUS_INFO">
+    <xs:annotation>
+      <xs:appinfo>
+        <IsValueType xmlns="http://schemas.microsoft.com/2003/10/Serialization/">true</IsValueType>
+      </xs:appinfo>
+    </xs:annotation>
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Attributi" type="tns:ATTRIBUTI_CLIENT" />
+      <xs:element minOccurs="0" name="ModalitàOperativa" type="tns:BIW_SFM_Activity.STATO_GOL" />
+      <xs:element minOccurs="0" name="PlcOnLine" type="xs:boolean" />
+      <xs:element minOccurs="0" name="ServerOnLine" type="xs:boolean" />
+      <xs:element minOccurs="0" name="StatoImpostatore" type="xs:int" />
+      <xs:element minOccurs="0" name="StatoProcesso" type="tns:BIW_SFM_Activity.STATO_PROCESSO" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="STATUS_INFO" nillable="true" type="tns:STATUS_INFO" />
+  <xs:complexType name="ATTRIBUTI_CLIENT">
+    <xs:annotation>
+      <xs:appinfo>
+        <IsValueType xmlns="http://schemas.microsoft.com/2003/10/Serialization/">true</IsValueType>
+      </xs:appinfo>
+    </xs:annotation>
+    <xs:sequence>
+      <xs:element minOccurs="0" name="IdNumerico" type="xs:int" />
+      <xs:element minOccurs="0" name="IsImpostatore" type="xs:boolean" />
+      <xs:element minOccurs="0" name="IsMaster" type="xs:boolean" />
+      <xs:element minOccurs="0" name="Linea" type="tns:LineaGol" />
+      <xs:element minOccurs="0" name="OffsetSlave" type="xs:int" />
+      <xs:element minOccurs="0" name="RangeCF" type="tns:RANGE" />
+      <xs:element minOccurs="0" name="RangeCSS" type="tns:RANGE" />
+      <xs:element minOccurs="0" name="RangeSSC" type="tns:RANGE" />
+      <xs:element minOccurs="0" name="RangeSequenze" type="tns:RANGE" />
+      <xs:element minOccurs="0" name="UpdateStrutturaProdotto" type="xs:boolean" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ATTRIBUTI_CLIENT" nillable="true" type="tns:ATTRIBUTI_CLIENT" />
+  <xs:complexType name="LineaGol">
+    <xs:annotation>
+      <xs:appinfo>
+        <IsValueType xmlns="http://schemas.microsoft.com/2003/10/Serialization/">true</IsValueType>
+      </xs:appinfo>
+    </xs:annotation>
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Decrizione" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="EquipmentID" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="IsImpostatore" type="xs:boolean" />
+      <xs:element minOccurs="0" name="Name" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="LineaGol" nillable="true" type="tns:LineaGol" />
+  <xs:complexType name="RANGE">
+    <xs:annotation>
+      <xs:appinfo>
+        <IsValueType xmlns="http://schemas.microsoft.com/2003/10/Serialization/">true</IsValueType>
+      </xs:appinfo>
+    </xs:annotation>
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Max" type="xs:int" />
+      <xs:element minOccurs="0" name="Min" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="RANGE" nillable="true" type="tns:RANGE" />
+  <xs:simpleType name="BIW_SFM_Activity.STATO_PROCESSO">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="FERMO" />
+      <xs:enumeration value="AVVIATO" />
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:element name="BIW_SFM_Activity.STATO_PROCESSO" nillable="true" type="tns:BIW_SFM_Activity.STATO_PROCESSO" />
+  <xs:complexType name="PRG_INFO">
+    <xs:annotation>
+      <xs:appinfo>
+        <IsValueType xmlns="http://schemas.microsoft.com/2003/10/Serialization/">true</IsValueType>
+      </xs:appinfo>
+    </xs:annotation>
+    <xs:sequence>
+      <xs:element minOccurs="0" name="NumElementi" type="xs:int" />
+      <xs:element minOccurs="0" name="SSC_Uni" type="xs:int" />
+      <xs:element minOccurs="0" name="SSC_Unp" type="xs:int" />
+      <xs:element minOccurs="0" name="SeqNr_Uni" type="xs:int" />
+      <xs:element minOccurs="0" name="SeqNr_Unp" type="xs:int" />
+      <xs:element minOccurs="0" name="SizeLista" type="xs:int" />
+      <xs:element minOccurs="0" name="UNI" nillable="true">
+        <xs:complexType>
+          <xs:annotation>
+            <xs:appinfo>
+              <ActualType Name="DataSet" Namespace="http://schemas.datacontract.org/2004/07/System.Data" xmlns="http://schemas.microsoft.com/2003/10/Serialization/" />
+            </xs:appinfo>
+          </xs:annotation>
+          <xs:sequence>
+            <xs:element ref="xs:schema" />
+            <xs:any />
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element minOccurs="0" name="UNP" nillable="true">
+        <xs:complexType>
+          <xs:annotation>
+            <xs:appinfo>
+              <ActualType Name="DataSet" Namespace="http://schemas.datacontract.org/2004/07/System.Data" xmlns="http://schemas.microsoft.com/2003/10/Serialization/" />
+            </xs:appinfo>
+          </xs:annotation>
+          <xs:sequence>
+            <xs:element ref="xs:schema" />
+            <xs:any />
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="PRG_INFO" nillable="true" type="tns:PRG_INFO" />
+  <xs:complexType name="LOIP_INFO">
+    <xs:annotation>
+      <xs:appinfo>
+        <IsValueType xmlns="http://schemas.microsoft.com/2003/10/Serialization/">true</IsValueType>
+      </xs:appinfo>
+    </xs:annotation>
+    <xs:sequence>
+      <xs:element minOccurs="0" name="SizeLista" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="LOIP_INFO" nillable="true" type="tns:LOIP_INFO" />
+  <xs:complexType name="STRPRODOTTO_INFO">
+    <xs:annotation>
+      <xs:appinfo>
+        <IsValueType xmlns="http://schemas.microsoft.com/2003/10/Serialization/">true</IsValueType>
+      </xs:appinfo>
+    </xs:annotation>
+    <xs:sequence>
+      <xs:element minOccurs="0" name="NumOfPages" type="xs:int" />
+      <xs:element minOccurs="0" name="SizeOfPage" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="STRPRODOTTO_INFO" nillable="true" type="tns:STRPRODOTTO_INFO" />
+</xs:schema>

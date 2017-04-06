@@ -1,0 +1,1637 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="14.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
+  </PropertyGroup>
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{AC9DD29F-F60E-48FB-AAE0-3073D7FAC746}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>NiceGOLAfterBlackout</RootNamespace>
+    <AssemblyName>NiceGOLAfterBlackout</AssemblyName>
+    <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <ProjectTypeGuids>{60dc8134-eba5-43b8-bcc9-bb4bc16c2548};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
+    <WarningLevel>4</WarningLevel>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.configuration" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.EnterpriseServices" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.ServiceModel" />
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.Xml" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Xaml">
+      <RequiredTargetFramework>4.0</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="WindowsBase" />
+    <Reference Include="PresentationCore" />
+    <Reference Include="PresentationFramework" />
+  </ItemGroup>
+  <ItemGroup>
+    <ApplicationDefinition Include="App.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </ApplicationDefinition>
+    <Compile Include="Models\BIWLine.cs" />
+    <Compile Include="Models\BIWLineList.cs" />
+    <Compile Include="Models\BIWLineQueue.cs" />
+    <Compile Include="Models\IBIWLine.cs" />
+    <Compile Include="Models\SgMThBgWorker.cs" />
+    <Compile Include="Service References\BIW\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Compile>
+    <Compile Include="Service References\BIW_SFM_AUC\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Compile>
+    <Compile Include="Service References\BIW_SFM_AUE\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Compile>
+    <Compile Include="Service References\BIW_SFM_COF\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Compile>
+    <Compile Include="Service References\BIW_SFM_FDA\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Compile>
+    <Compile Include="Service References\BIW_SFM_FPD\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Compile>
+    <Compile Include="Service References\BIW_SFM_FPS\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Compile>
+    <Compile Include="Service References\BIW_SFM_FSA\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Compile>
+    <Compile Include="Service References\BIW_SFM_OFD\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Compile>
+    <Compile Include="Service References\BIW_SFM_OFS\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Compile>
+    <Compile Include="Service References\BIW_SFM_PAN\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Compile>
+    <Compile Include="Service References\BIW_SFM_PLCD\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Compile>
+    <Compile Include="Service References\BIW_SFM_PLCS\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Compile>
+    <Compile Include="Service References\BIW_SFM_PLD\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Compile>
+    <Compile Include="Service References\BIW_SFM_PLS\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Compile>
+    <Compile Include="Service References\BIW_SFM_PPA\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Compile>
+    <Compile Include="Service References\BIW_SFM_PPCD\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Compile>
+    <Compile Include="Service References\BIW_SFM_PPCS\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Compile>
+    <Compile Include="Service References\BIW_SFM_PPD\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Compile>
+    <Compile Include="Service References\BIW_SFM_PPP\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Compile>
+    <Compile Include="Service References\BIW_SFM_PPS\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Compile>
+    <Compile Include="Service References\BIW_SFM_PRD\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Compile>
+    <Compile Include="Service References\BIW_SFM_PRS\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Compile>
+    <Compile Include="Service References\BIW_SFM_SCC\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Compile>
+    <Compile Include="Service References\BIW_SFM_SCE\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Compile>
+    <Compile Include="Service References\BIW_SFM_SPG\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Compile>
+    <Compile Include="Service References\BIW_SFM_SPJ\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Compile>
+    <Compile Include="Service References\BIW_SFM_TEA\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Compile>
+    <Compile Include="Service References\BIW_SFM_TPF\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Compile>
+    <Compile Include="Service References\BIW_SFM_TUP\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Compile>
+    <Compile Include="Service References\BIW_WebApp_WCF\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Compile>
+    <Compile Include="Settings.cs" />
+    <Compile Include="SqlDatabaseSetup.cs" />
+    <Compile Include="SqlServerUnitTest1.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Page Include="MainWindow.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Compile Include="App.xaml.cs">
+      <DependentUpon>App.xaml</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="MainWindow.xaml.cs">
+      <DependentUpon>MainWindow.xaml</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Properties\AssemblyInfo.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <None Include="Properties\DataSources\System.Data.DataSet.datasource" />
+    <None Include="Properties\DataSources\System.Xml.Linq.XElement.datasource" />
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <AppDesigner Include="Properties\" />
+    <None Include="Service References\BIW\BIW_SFM_GUI.wsdl" />
+    <None Include="Service References\BIW\C191.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\BIW\C1911.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\BIW\C1912.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\BIW\C1913.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\BIW\NiceGOLAfterBlackout.BIW.ACK_PLC.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\BIW\NiceGOLAfterBlackout.BIW.LOIP_INFO.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\BIW\NiceGOLAfterBlackout.BIW.PRG_INFO.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\BIW\NiceGOLAfterBlackout.BIW.STATUS_INFO.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\BIW\NiceGOLAfterBlackout.BIW.STRPRODOTTO_INFO.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\BIW_SFM_AUC\BIW_SFM_GUI.wsdl" />
+    <None Include="Service References\BIW_SFM_AUC\C191.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\BIW_SFM_AUC\C1911.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\BIW_SFM_AUC\C1912.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\BIW_SFM_AUC\C1913.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\BIW_SFM_AUC\NiceGOLAfterBlackout.BIW_SFM_AUC.ACK_PLC.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\BIW_SFM_AUC\NiceGOLAfterBlackout.BIW_SFM_AUC.LOIP_INFO.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\BIW_SFM_AUC\NiceGOLAfterBlackout.BIW_SFM_AUC.PRG_INFO.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\BIW_SFM_AUC\NiceGOLAfterBlackout.BIW_SFM_AUC.STATUS_INFO.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\BIW_SFM_AUC\NiceGOLAfterBlackout.BIW_SFM_AUC.STRPRODOTTO_INFO.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\BIW_SFM_AUE\BIW_SFM_GUI.wsdl" />
+    <None Include="Service References\BIW_SFM_AUE\C191.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\BIW_SFM_AUE\C1911.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\BIW_SFM_AUE\C1912.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\BIW_SFM_AUE\C1913.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\BIW_SFM_AUE\NiceGOLAfterBlackout.BIW_SFM_AUE.ACK_PLC.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\BIW_SFM_AUE\NiceGOLAfterBlackout.BIW_SFM_AUE.LOIP_INFO.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\BIW_SFM_AUE\NiceGOLAfterBlackout.BIW_SFM_AUE.PRG_INFO.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\BIW_SFM_AUE\NiceGOLAfterBlackout.BIW_SFM_AUE.STATUS_INFO.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\BIW_SFM_AUE\NiceGOLAfterBlackout.BIW_SFM_AUE.STRPRODOTTO_INFO.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\BIW_SFM_COF\BIW_SFM_GUI.wsdl" />
+    <None Include="Service References\BIW_SFM_COF\C191.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\BIW_SFM_COF\C1911.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\BIW_SFM_COF\C1912.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\BIW_SFM_COF\C1913.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\BIW_SFM_COF\NiceGOLAfterBlackout.BIW_SFM_COF.ACK_PLC.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\BIW_SFM_COF\NiceGOLAfterBlackout.BIW_SFM_COF.LOIP_INFO.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\BIW_SFM_COF\NiceGOLAfterBlackout.BIW_SFM_COF.PRG_INFO.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\BIW_SFM_COF\NiceGOLAfterBlackout.BIW_SFM_COF.STATUS_INFO.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\BIW_SFM_COF\NiceGOLAfterBlackout.BIW_SFM_COF.STRPRODOTTO_INFO.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\BIW_SFM_FDA\BIW_SFM_GUI.wsdl" />
+    <None Include="Service References\BIW_SFM_FDA\C191.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\BIW_SFM_FDA\C1911.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\BIW_SFM_FDA\C1912.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\BIW_SFM_FDA\C1913.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\BIW_SFM_FDA\NiceGOLAfterBlackout.BIW_SFM_FDA.ACK_PLC.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\BIW_SFM_FDA\NiceGOLAfterBlackout.BIW_SFM_FDA.LOIP_INFO.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\BIW_SFM_FDA\NiceGOLAfterBlackout.BIW_SFM_FDA.PRG_INFO.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\BIW_SFM_FDA\NiceGOLAfterBlackout.BIW_SFM_FDA.STATUS_INFO.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\BIW_SFM_FDA\NiceGOLAfterBlackout.BIW_SFM_FDA.STRPRODOTTO_INFO.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\BIW_SFM_FPD\BIW_SFM_GUI.wsdl" />
+    <None Include="Service References\BIW_SFM_FPD\C191.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\BIW_SFM_FPD\C1911.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\BIW_SFM_FPD\C1912.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\BIW_SFM_FPD\C1913.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\BIW_SFM_FPD\NiceGOLAfterBlackout.BIW_SFM_FPD.ACK_PLC.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\BIW_SFM_FPD\NiceGOLAfterBlackout.BIW_SFM_FPD.LOIP_INFO.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\BIW_SFM_FPD\NiceGOLAfterBlackout.BIW_SFM_FPD.PRG_INFO.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\BIW_SFM_FPD\NiceGOLAfterBlackout.BIW_SFM_FPD.STATUS_INFO.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\BIW_SFM_FPD\NiceGOLAfterBlackout.BIW_SFM_FPD.STRPRODOTTO_INFO.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\BIW_SFM_FPS\BIW_SFM_GUI.wsdl" />
+    <None Include="Service References\BIW_SFM_FPS\C191.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\BIW_SFM_FPS\C1911.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\BIW_SFM_FPS\C1912.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\BIW_SFM_FPS\C1913.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\BIW_SFM_FPS\NiceGOLAfterBlackout.BIW_SFM_FPS.ACK_PLC.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\BIW_SFM_FPS\NiceGOLAfterBlackout.BIW_SFM_FPS.LOIP_INFO.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\BIW_SFM_FPS\NiceGOLAfterBlackout.BIW_SFM_FPS.PRG_INFO.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\BIW_SFM_FPS\NiceGOLAfterBlackout.BIW_SFM_FPS.STATUS_INFO.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\BIW_SFM_FPS\NiceGOLAfterBlackout.BIW_SFM_FPS.STRPRODOTTO_INFO.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\BIW_SFM_FSA\BIW_SFM_GUI.wsdl" />
+    <None Include="Service References\BIW_SFM_FSA\C191.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\BIW_SFM_FSA\C1911.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\BIW_SFM_FSA\C1912.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\BIW_SFM_FSA\C1913.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\BIW_SFM_FSA\NiceGOLAfterBlackout.BIW_SFM_FSA.ACK_PLC.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\BIW_SFM_FSA\NiceGOLAfterBlackout.BIW_SFM_FSA.LOIP_INFO.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\BIW_SFM_FSA\NiceGOLAfterBlackout.BIW_SFM_FSA.PRG_INFO.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\BIW_SFM_FSA\NiceGOLAfterBlackout.BIW_SFM_FSA.STATUS_INFO.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\BIW_SFM_FSA\NiceGOLAfterBlackout.BIW_SFM_FSA.STRPRODOTTO_INFO.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\BIW_SFM_OFD\BIW_SFM_GUI.wsdl" />
+    <None Include="Service References\BIW_SFM_OFD\C191.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\BIW_SFM_OFD\C1911.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\BIW_SFM_OFD\C1912.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\BIW_SFM_OFD\C1913.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\BIW_SFM_OFD\NiceGOLAfterBlackout.BIW_SFM_OFD.ACK_PLC.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\BIW_SFM_OFD\NiceGOLAfterBlackout.BIW_SFM_OFD.LOIP_INFO.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\BIW_SFM_OFD\NiceGOLAfterBlackout.BIW_SFM_OFD.PRG_INFO.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\BIW_SFM_OFD\NiceGOLAfterBlackout.BIW_SFM_OFD.STATUS_INFO.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\BIW_SFM_OFD\NiceGOLAfterBlackout.BIW_SFM_OFD.STRPRODOTTO_INFO.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\BIW_SFM_OFS\BIW_SFM_GUI.wsdl" />
+    <None Include="Service References\BIW_SFM_OFS\C191.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\BIW_SFM_OFS\C1911.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\BIW_SFM_OFS\C1912.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\BIW_SFM_OFS\C1913.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\BIW_SFM_OFS\NiceGOLAfterBlackout.BIW_SFM_OFS.ACK_PLC.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\BIW_SFM_OFS\NiceGOLAfterBlackout.BIW_SFM_OFS.LOIP_INFO.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\BIW_SFM_OFS\NiceGOLAfterBlackout.BIW_SFM_OFS.PRG_INFO.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\BIW_SFM_OFS\NiceGOLAfterBlackout.BIW_SFM_OFS.STATUS_INFO.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\BIW_SFM_OFS\NiceGOLAfterBlackout.BIW_SFM_OFS.STRPRODOTTO_INFO.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\BIW_SFM_PAN\BIW_SFM_GUI.wsdl" />
+    <None Include="Service References\BIW_SFM_PAN\C191.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\BIW_SFM_PAN\C1911.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\BIW_SFM_PAN\C1912.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\BIW_SFM_PAN\C1913.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\BIW_SFM_PAN\NiceGOLAfterBlackout.BIW_SFM_PAN.ACK_PLC.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\BIW_SFM_PAN\NiceGOLAfterBlackout.BIW_SFM_PAN.LOIP_INFO.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\BIW_SFM_PAN\NiceGOLAfterBlackout.BIW_SFM_PAN.PRG_INFO.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\BIW_SFM_PAN\NiceGOLAfterBlackout.BIW_SFM_PAN.STATUS_INFO.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\BIW_SFM_PAN\NiceGOLAfterBlackout.BIW_SFM_PAN.STRPRODOTTO_INFO.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\BIW_SFM_PLCD\BIW_SFM_GUI.wsdl" />
+    <None Include="Service References\BIW_SFM_PLCD\C191.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\BIW_SFM_PLCD\C1911.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\BIW_SFM_PLCD\C1912.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\BIW_SFM_PLCD\C1913.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\BIW_SFM_PLCD\NiceGOLAfterBlackout.BIW_SFM_PLCD.ACK_PLC.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\BIW_SFM_PLCD\NiceGOLAfterBlackout.BIW_SFM_PLCD.LOIP_INFO.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\BIW_SFM_PLCD\NiceGOLAfterBlackout.BIW_SFM_PLCD.PRG_INFO.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\BIW_SFM_PLCD\NiceGOLAfterBlackout.BIW_SFM_PLCD.STATUS_INFO.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\BIW_SFM_PLCD\NiceGOLAfterBlackout.BIW_SFM_PLCD.STRPRODOTTO_INFO.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\BIW_SFM_PLCS\BIW_SFM_GUI.wsdl" />
+    <None Include="Service References\BIW_SFM_PLCS\C191.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\BIW_SFM_PLCS\C1911.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\BIW_SFM_PLCS\C1912.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\BIW_SFM_PLCS\C1913.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\BIW_SFM_PLCS\NiceGOLAfterBlackout.BIW_SFM_PLCS.ACK_PLC.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\BIW_SFM_PLCS\NiceGOLAfterBlackout.BIW_SFM_PLCS.LOIP_INFO.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\BIW_SFM_PLCS\NiceGOLAfterBlackout.BIW_SFM_PLCS.PRG_INFO.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\BIW_SFM_PLCS\NiceGOLAfterBlackout.BIW_SFM_PLCS.STATUS_INFO.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\BIW_SFM_PLCS\NiceGOLAfterBlackout.BIW_SFM_PLCS.STRPRODOTTO_INFO.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\BIW_SFM_PLD\BIW_SFM_GUI.wsdl" />
+    <None Include="Service References\BIW_SFM_PLD\C191.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\BIW_SFM_PLD\C1911.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\BIW_SFM_PLD\C1912.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\BIW_SFM_PLD\C1913.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\BIW_SFM_PLD\NiceGOLAfterBlackout.BIW_SFM_PLD.ACK_PLC.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\BIW_SFM_PLD\NiceGOLAfterBlackout.BIW_SFM_PLD.LOIP_INFO.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\BIW_SFM_PLD\NiceGOLAfterBlackout.BIW_SFM_PLD.PRG_INFO.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\BIW_SFM_PLD\NiceGOLAfterBlackout.BIW_SFM_PLD.STATUS_INFO.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\BIW_SFM_PLD\NiceGOLAfterBlackout.BIW_SFM_PLD.STRPRODOTTO_INFO.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\BIW_SFM_PLS\BIW_SFM_GUI.wsdl" />
+    <None Include="Service References\BIW_SFM_PLS\C191.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\BIW_SFM_PLS\C1911.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\BIW_SFM_PLS\C1912.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\BIW_SFM_PLS\C1913.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\BIW_SFM_PLS\NiceGOLAfterBlackout.BIW_SFM_PLS.ACK_PLC.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\BIW_SFM_PLS\NiceGOLAfterBlackout.BIW_SFM_PLS.LOIP_INFO.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\BIW_SFM_PLS\NiceGOLAfterBlackout.BIW_SFM_PLS.PRG_INFO.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\BIW_SFM_PLS\NiceGOLAfterBlackout.BIW_SFM_PLS.STATUS_INFO.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\BIW_SFM_PLS\NiceGOLAfterBlackout.BIW_SFM_PLS.STRPRODOTTO_INFO.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\BIW_SFM_PPA\BIW_SFM_GUI.wsdl" />
+    <None Include="Service References\BIW_SFM_PPA\C191.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\BIW_SFM_PPA\C1911.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\BIW_SFM_PPA\C1912.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\BIW_SFM_PPA\C1913.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\BIW_SFM_PPA\NiceGOLAfterBlackout.BIW_SFM_PPA.ACK_PLC.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\BIW_SFM_PPA\NiceGOLAfterBlackout.BIW_SFM_PPA.LOIP_INFO.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\BIW_SFM_PPA\NiceGOLAfterBlackout.BIW_SFM_PPA.PRG_INFO.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\BIW_SFM_PPA\NiceGOLAfterBlackout.BIW_SFM_PPA.STATUS_INFO.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\BIW_SFM_PPA\NiceGOLAfterBlackout.BIW_SFM_PPA.STRPRODOTTO_INFO.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\BIW_SFM_PPCD\BIW_SFM_GUI.wsdl" />
+    <None Include="Service References\BIW_SFM_PPCD\C191.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\BIW_SFM_PPCD\C1911.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\BIW_SFM_PPCD\C1912.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\BIW_SFM_PPCD\C1913.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\BIW_SFM_PPCD\NiceGOLAfterBlackout.BIW_SFM_PPCD.ACK_PLC.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\BIW_SFM_PPCD\NiceGOLAfterBlackout.BIW_SFM_PPCD.LOIP_INFO.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\BIW_SFM_PPCD\NiceGOLAfterBlackout.BIW_SFM_PPCD.PRG_INFO.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\BIW_SFM_PPCD\NiceGOLAfterBlackout.BIW_SFM_PPCD.STATUS_INFO.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\BIW_SFM_PPCD\NiceGOLAfterBlackout.BIW_SFM_PPCD.STRPRODOTTO_INFO.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\BIW_SFM_PPCS\BIW_SFM_GUI.wsdl" />
+    <None Include="Service References\BIW_SFM_PPCS\C191.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\BIW_SFM_PPCS\C1911.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\BIW_SFM_PPCS\C1912.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\BIW_SFM_PPCS\C1913.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\BIW_SFM_PPCS\NiceGOLAfterBlackout.BIW_SFM_PPCS.ACK_PLC.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\BIW_SFM_PPCS\NiceGOLAfterBlackout.BIW_SFM_PPCS.LOIP_INFO.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\BIW_SFM_PPCS\NiceGOLAfterBlackout.BIW_SFM_PPCS.PRG_INFO.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\BIW_SFM_PPCS\NiceGOLAfterBlackout.BIW_SFM_PPCS.STATUS_INFO.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\BIW_SFM_PPCS\NiceGOLAfterBlackout.BIW_SFM_PPCS.STRPRODOTTO_INFO.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\BIW_SFM_PPD\BIW_SFM_GUI.wsdl" />
+    <None Include="Service References\BIW_SFM_PPD\C191.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\BIW_SFM_PPD\C1911.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\BIW_SFM_PPD\C1912.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\BIW_SFM_PPD\C1913.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\BIW_SFM_PPD\NiceGOLAfterBlackout.BIW_SFM_PPD.ACK_PLC.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\BIW_SFM_PPD\NiceGOLAfterBlackout.BIW_SFM_PPD.LOIP_INFO.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\BIW_SFM_PPD\NiceGOLAfterBlackout.BIW_SFM_PPD.PRG_INFO.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\BIW_SFM_PPD\NiceGOLAfterBlackout.BIW_SFM_PPD.STATUS_INFO.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\BIW_SFM_PPD\NiceGOLAfterBlackout.BIW_SFM_PPD.STRPRODOTTO_INFO.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\BIW_SFM_PPP\BIW_SFM_GUI.wsdl" />
+    <None Include="Service References\BIW_SFM_PPP\C191.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\BIW_SFM_PPP\C1911.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\BIW_SFM_PPP\C1912.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\BIW_SFM_PPP\C1913.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\BIW_SFM_PPP\NiceGOLAfterBlackout.BIW_SFM_PPP.ACK_PLC.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\BIW_SFM_PPP\NiceGOLAfterBlackout.BIW_SFM_PPP.LOIP_INFO.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\BIW_SFM_PPP\NiceGOLAfterBlackout.BIW_SFM_PPP.PRG_INFO.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\BIW_SFM_PPP\NiceGOLAfterBlackout.BIW_SFM_PPP.STATUS_INFO.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\BIW_SFM_PPP\NiceGOLAfterBlackout.BIW_SFM_PPP.STRPRODOTTO_INFO.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\BIW_SFM_PPS\BIW_SFM_GUI.wsdl" />
+    <None Include="Service References\BIW_SFM_PPS\C191.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\BIW_SFM_PPS\C1911.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\BIW_SFM_PPS\C1912.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\BIW_SFM_PPS\C1913.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\BIW_SFM_PPS\NiceGOLAfterBlackout.BIW_SFM_PPS.ACK_PLC.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\BIW_SFM_PPS\NiceGOLAfterBlackout.BIW_SFM_PPS.LOIP_INFO.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\BIW_SFM_PPS\NiceGOLAfterBlackout.BIW_SFM_PPS.PRG_INFO.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\BIW_SFM_PPS\NiceGOLAfterBlackout.BIW_SFM_PPS.STATUS_INFO.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\BIW_SFM_PPS\NiceGOLAfterBlackout.BIW_SFM_PPS.STRPRODOTTO_INFO.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\BIW_SFM_PRD\BIW_SFM_GUI.wsdl" />
+    <None Include="Service References\BIW_SFM_PRD\C191.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\BIW_SFM_PRD\C1911.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\BIW_SFM_PRD\C1912.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\BIW_SFM_PRD\C1913.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\BIW_SFM_PRD\NiceGOLAfterBlackout.BIW_SFM_PRD.ACK_PLC.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\BIW_SFM_PRD\NiceGOLAfterBlackout.BIW_SFM_PRD.LOIP_INFO.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\BIW_SFM_PRD\NiceGOLAfterBlackout.BIW_SFM_PRD.PRG_INFO.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\BIW_SFM_PRD\NiceGOLAfterBlackout.BIW_SFM_PRD.STATUS_INFO.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\BIW_SFM_PRD\NiceGOLAfterBlackout.BIW_SFM_PRD.STRPRODOTTO_INFO.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\BIW_SFM_PRS\BIW_SFM_GUI.wsdl" />
+    <None Include="Service References\BIW_SFM_PRS\C191.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\BIW_SFM_PRS\C1911.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\BIW_SFM_PRS\C1912.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\BIW_SFM_PRS\C1913.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\BIW_SFM_PRS\NiceGOLAfterBlackout.BIW_SFM_PRS.ACK_PLC.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\BIW_SFM_PRS\NiceGOLAfterBlackout.BIW_SFM_PRS.LOIP_INFO.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\BIW_SFM_PRS\NiceGOLAfterBlackout.BIW_SFM_PRS.PRG_INFO.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\BIW_SFM_PRS\NiceGOLAfterBlackout.BIW_SFM_PRS.STATUS_INFO.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\BIW_SFM_PRS\NiceGOLAfterBlackout.BIW_SFM_PRS.STRPRODOTTO_INFO.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\BIW_SFM_SCC\BIW_SFM_GUI.wsdl" />
+    <None Include="Service References\BIW_SFM_SCC\C191.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\BIW_SFM_SCC\C1911.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\BIW_SFM_SCC\C1912.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\BIW_SFM_SCC\C1913.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\BIW_SFM_SCC\NiceGOLAfterBlackout.BIW_SFM_SCC.ACK_PLC.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\BIW_SFM_SCC\NiceGOLAfterBlackout.BIW_SFM_SCC.LOIP_INFO.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\BIW_SFM_SCC\NiceGOLAfterBlackout.BIW_SFM_SCC.PRG_INFO.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\BIW_SFM_SCC\NiceGOLAfterBlackout.BIW_SFM_SCC.STATUS_INFO.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\BIW_SFM_SCC\NiceGOLAfterBlackout.BIW_SFM_SCC.STRPRODOTTO_INFO.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\BIW_SFM_SCE\BIW_SFM_GUI.wsdl" />
+    <None Include="Service References\BIW_SFM_SCE\C191.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\BIW_SFM_SCE\C1911.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\BIW_SFM_SCE\C1912.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\BIW_SFM_SCE\C1913.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\BIW_SFM_SCE\NiceGOLAfterBlackout.BIW_SFM_SCE.ACK_PLC.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\BIW_SFM_SCE\NiceGOLAfterBlackout.BIW_SFM_SCE.LOIP_INFO.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\BIW_SFM_SCE\NiceGOLAfterBlackout.BIW_SFM_SCE.PRG_INFO.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\BIW_SFM_SCE\NiceGOLAfterBlackout.BIW_SFM_SCE.STATUS_INFO.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\BIW_SFM_SCE\NiceGOLAfterBlackout.BIW_SFM_SCE.STRPRODOTTO_INFO.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\BIW_SFM_SPG\BIW_SFM_GUI.wsdl" />
+    <None Include="Service References\BIW_SFM_SPG\C191.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\BIW_SFM_SPG\C1911.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\BIW_SFM_SPG\C1912.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\BIW_SFM_SPG\C1913.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\BIW_SFM_SPG\NiceGOLAfterBlackout.BIW_SFM_SPG.ACK_PLC.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\BIW_SFM_SPG\NiceGOLAfterBlackout.BIW_SFM_SPG.LOIP_INFO.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\BIW_SFM_SPG\NiceGOLAfterBlackout.BIW_SFM_SPG.PRG_INFO.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\BIW_SFM_SPG\NiceGOLAfterBlackout.BIW_SFM_SPG.STATUS_INFO.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\BIW_SFM_SPG\NiceGOLAfterBlackout.BIW_SFM_SPG.STRPRODOTTO_INFO.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\BIW_SFM_SPJ\BIW_SFM_GUI.wsdl" />
+    <None Include="Service References\BIW_SFM_SPJ\C191.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\BIW_SFM_SPJ\C1911.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\BIW_SFM_SPJ\C1912.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\BIW_SFM_SPJ\C1913.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\BIW_SFM_SPJ\NiceGOLAfterBlackout.BIW_SFM_SPJ.ACK_PLC.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\BIW_SFM_SPJ\NiceGOLAfterBlackout.BIW_SFM_SPJ.LOIP_INFO.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\BIW_SFM_SPJ\NiceGOLAfterBlackout.BIW_SFM_SPJ.PRG_INFO.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\BIW_SFM_SPJ\NiceGOLAfterBlackout.BIW_SFM_SPJ.STATUS_INFO.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\BIW_SFM_SPJ\NiceGOLAfterBlackout.BIW_SFM_SPJ.STRPRODOTTO_INFO.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\BIW_SFM_TEA\BIW_SFM_GUI.wsdl" />
+    <None Include="Service References\BIW_SFM_TEA\C191.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\BIW_SFM_TEA\C1911.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\BIW_SFM_TEA\C1912.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\BIW_SFM_TEA\C1913.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\BIW_SFM_TEA\NiceGOLAfterBlackout.BIW_SFM_TEA.ACK_PLC.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\BIW_SFM_TEA\NiceGOLAfterBlackout.BIW_SFM_TEA.LOIP_INFO.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\BIW_SFM_TEA\NiceGOLAfterBlackout.BIW_SFM_TEA.PRG_INFO.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\BIW_SFM_TEA\NiceGOLAfterBlackout.BIW_SFM_TEA.STATUS_INFO.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\BIW_SFM_TEA\NiceGOLAfterBlackout.BIW_SFM_TEA.STRPRODOTTO_INFO.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\BIW_SFM_TPF\BIW_SFM_GUI.wsdl" />
+    <None Include="Service References\BIW_SFM_TPF\C191.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\BIW_SFM_TPF\C1911.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\BIW_SFM_TPF\C1912.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\BIW_SFM_TPF\C1913.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\BIW_SFM_TPF\NiceGOLAfterBlackout.BIW_SFM_TPF.ACK_PLC.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\BIW_SFM_TPF\NiceGOLAfterBlackout.BIW_SFM_TPF.LOIP_INFO.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\BIW_SFM_TPF\NiceGOLAfterBlackout.BIW_SFM_TPF.PRG_INFO.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\BIW_SFM_TPF\NiceGOLAfterBlackout.BIW_SFM_TPF.STATUS_INFO.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\BIW_SFM_TPF\NiceGOLAfterBlackout.BIW_SFM_TPF.STRPRODOTTO_INFO.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\BIW_SFM_TUP\BIW_SFM_GUI.wsdl" />
+    <None Include="Service References\BIW_SFM_TUP\C191.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\BIW_SFM_TUP\C1911.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\BIW_SFM_TUP\C1912.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\BIW_SFM_TUP\C1913.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\BIW_SFM_TUP\NiceGOLAfterBlackout.BIW_SFM_TUP.ACK_PLC.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\BIW_SFM_TUP\NiceGOLAfterBlackout.BIW_SFM_TUP.LOIP_INFO.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\BIW_SFM_TUP\NiceGOLAfterBlackout.BIW_SFM_TUP.PRG_INFO.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\BIW_SFM_TUP\NiceGOLAfterBlackout.BIW_SFM_TUP.STATUS_INFO.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\BIW_SFM_TUP\NiceGOLAfterBlackout.BIW_SFM_TUP.STRPRODOTTO_INFO.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\BIW_WebApp_WCF\Service1.wsdl" />
+    <None Include="Service References\BIW_WebApp_WCF\Service3.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\BIW_WebApp_WCF\Service31.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\BIW_WebApp_WCF\Service32.xsd">
+      <SubType>Designer</SubType>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadata Include="Service References\" />
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadataStorage Include="Service References\BIW\" />
+    <WCFMetadataStorage Include="Service References\BIW_SFM_AUC\" />
+    <WCFMetadataStorage Include="Service References\BIW_SFM_AUE\" />
+    <WCFMetadataStorage Include="Service References\BIW_SFM_COF\" />
+    <WCFMetadataStorage Include="Service References\BIW_SFM_FDA\" />
+    <WCFMetadataStorage Include="Service References\BIW_SFM_FPD\" />
+    <WCFMetadataStorage Include="Service References\BIW_SFM_FPS\" />
+    <WCFMetadataStorage Include="Service References\BIW_SFM_FSA\" />
+    <WCFMetadataStorage Include="Service References\BIW_SFM_OFD\" />
+    <WCFMetadataStorage Include="Service References\BIW_SFM_OFS\" />
+    <WCFMetadataStorage Include="Service References\BIW_SFM_PAN\" />
+    <WCFMetadataStorage Include="Service References\BIW_SFM_PLCD\" />
+    <WCFMetadataStorage Include="Service References\BIW_SFM_PLCS\" />
+    <WCFMetadataStorage Include="Service References\BIW_SFM_PLD\" />
+    <WCFMetadataStorage Include="Service References\BIW_SFM_PLS\" />
+    <WCFMetadataStorage Include="Service References\BIW_SFM_PPA\" />
+    <WCFMetadataStorage Include="Service References\BIW_SFM_PPCD\" />
+    <WCFMetadataStorage Include="Service References\BIW_SFM_PPCS\" />
+    <WCFMetadataStorage Include="Service References\BIW_SFM_PPD\" />
+    <WCFMetadataStorage Include="Service References\BIW_SFM_PPP\" />
+    <WCFMetadataStorage Include="Service References\BIW_SFM_PPS\" />
+    <WCFMetadataStorage Include="Service References\BIW_SFM_PRD\" />
+    <WCFMetadataStorage Include="Service References\BIW_SFM_PRS\" />
+    <WCFMetadataStorage Include="Service References\BIW_SFM_SCC\" />
+    <WCFMetadataStorage Include="Service References\BIW_SFM_SCE\" />
+    <WCFMetadataStorage Include="Service References\BIW_SFM_SPG\" />
+    <WCFMetadataStorage Include="Service References\BIW_SFM_SPJ\" />
+    <WCFMetadataStorage Include="Service References\BIW_SFM_TEA\" />
+    <WCFMetadataStorage Include="Service References\BIW_SFM_TPF\" />
+    <WCFMetadataStorage Include="Service References\BIW_SFM_TUP\" />
+    <WCFMetadataStorage Include="Service References\BIW_WebApp_WCF\" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\BIW_WebApp_WCF\configuration91.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\BIW_WebApp_WCF\configuration.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\BIW_WebApp_WCF\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\BIW_SFM_TUP\C191.disco" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\BIW_SFM_TUP\configuration91.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\BIW_SFM_TUP\configuration.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\BIW_SFM_TUP\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\BIW_SFM_TPF\C191.disco" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\BIW_SFM_TPF\configuration91.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\BIW_SFM_TPF\configuration.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\BIW_SFM_TPF\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\BIW_SFM_TEA\C191.disco" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\BIW_SFM_TEA\configuration91.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\BIW_SFM_TEA\configuration.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\BIW_SFM_TEA\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\BIW_SFM_SPJ\C191.disco" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\BIW_SFM_SPJ\configuration91.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\BIW_SFM_SPJ\configuration.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\BIW_SFM_SPJ\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\BIW_SFM_SPG\C191.disco" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\BIW_SFM_SPG\configuration91.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\BIW_SFM_SPG\configuration.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\BIW_SFM_SPG\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\BIW_SFM_SCE\C191.disco" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\BIW_SFM_SCE\configuration91.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\BIW_SFM_SCE\configuration.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\BIW_SFM_SCE\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\BIW_SFM_SCC\C191.disco" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\BIW_SFM_SCC\configuration91.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\BIW_SFM_SCC\configuration.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\BIW_SFM_SCC\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\BIW_SFM_PRS\C191.disco" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\BIW_SFM_PRS\configuration91.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\BIW_SFM_PRS\configuration.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\BIW_SFM_PRS\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\BIW_SFM_PRD\C191.disco" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\BIW_SFM_PRD\configuration91.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\BIW_SFM_PRD\configuration.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\BIW_SFM_PRD\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\BIW_SFM_PPS\C191.disco" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\BIW_SFM_PPS\configuration91.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\BIW_SFM_PPS\configuration.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\BIW_SFM_PPS\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\BIW_SFM_PPP\C191.disco" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\BIW_SFM_PPP\configuration91.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\BIW_SFM_PPP\configuration.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\BIW_SFM_PPP\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\BIW_SFM_PPD\C191.disco" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\BIW_SFM_PPD\configuration91.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\BIW_SFM_PPD\configuration.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\BIW_SFM_PPD\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\BIW_SFM_PPCS\C191.disco" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\BIW_SFM_PPCS\configuration91.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\BIW_SFM_PPCS\configuration.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\BIW_SFM_PPCS\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\BIW_SFM_PPCD\C191.disco" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\BIW_SFM_PPCD\configuration91.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\BIW_SFM_PPCD\configuration.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\BIW_SFM_PPCD\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\BIW_SFM_PPA\C191.disco" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\BIW_SFM_PPA\configuration91.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\BIW_SFM_PPA\configuration.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\BIW_SFM_PPA\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\BIW_SFM_PLS\C191.disco" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\BIW_SFM_PLS\configuration91.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\BIW_SFM_PLS\configuration.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\BIW_SFM_PLS\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\BIW_SFM_PLD\C191.disco" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\BIW_SFM_PLD\configuration91.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\BIW_SFM_PLD\configuration.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\BIW_SFM_PLD\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\BIW_SFM_PLCS\C191.disco" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\BIW_SFM_PLCS\configuration91.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\BIW_SFM_PLCS\configuration.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\BIW_SFM_PLCS\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\BIW_SFM_PLCD\C191.disco" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\BIW_SFM_PLCD\configuration91.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\BIW_SFM_PLCD\configuration.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\BIW_SFM_PLCD\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\BIW_SFM_PAN\C191.disco" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\BIW_SFM_PAN\configuration91.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\BIW_SFM_PAN\configuration.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\BIW_SFM_PAN\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\BIW_SFM_OFS\C191.disco" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\BIW_SFM_OFS\configuration91.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\BIW_SFM_OFS\configuration.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\BIW_SFM_OFS\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\BIW_SFM_OFD\C191.disco" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\BIW_SFM_OFD\configuration91.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\BIW_SFM_OFD\configuration.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\BIW_SFM_OFD\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\BIW_SFM_FSA\C191.disco" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\BIW_SFM_FSA\configuration91.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\BIW_SFM_FSA\configuration.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\BIW_SFM_FSA\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\BIW_SFM_FPS\C191.disco" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\BIW_SFM_FPS\configuration91.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\BIW_SFM_FPS\configuration.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\BIW_SFM_FPS\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\BIW_SFM_FDA\C191.disco" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\BIW_SFM_FDA\configuration91.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\BIW_SFM_FDA\configuration.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\BIW_SFM_FDA\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\BIW_SFM_AUE\C191.disco" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\BIW_SFM_AUE\configuration91.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\BIW_SFM_AUE\configuration.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\BIW_SFM_AUE\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\BIW_SFM_COF\C191.disco" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\BIW_SFM_COF\configuration91.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\BIW_SFM_COF\configuration.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\BIW_SFM_COF\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\BIW_SFM_AUC\C191.disco" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\BIW_SFM_AUC\configuration91.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\BIW_SFM_AUC\configuration.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\BIW_SFM_AUC\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\BIW_SFM_FPD\C191.disco" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\BIW_SFM_FPD\configuration91.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\BIW_SFM_FPD\configuration.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\BIW_SFM_FPD\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\BIW\C191.disco" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\BIW\configuration91.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\BIW\configuration.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\BIW\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\BIW_WebApp_WCF\Service1.disco" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <Import Project="$(SQLDBExtensionsRefPath)\Microsoft.Data.Tools.Schema.Sql.UnitTesting.targets" Condition="'$(SQLDBExtensionsRefPath)' != ''" />
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)\SSDT\Microsoft.Data.Tools.Schema.Sql.UnitTesting.targets" Condition="'$(SQLDBExtensionsRefPath)' == ''" />
+  <PropertyGroup>
+    <SsdtUnitTestVersion>2.0</SsdtUnitTestVersion>
+  </PropertyGroup>
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

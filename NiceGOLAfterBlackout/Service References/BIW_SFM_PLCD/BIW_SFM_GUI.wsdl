@@ -1,0 +1,564 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:wsap="http://schemas.xmlsoap.org/ws/2004/08/addressing/policy" xmlns:wsa10="http://www.w3.org/2005/08/addressing" xmlns:tns="http://tempuri.org/" xmlns:msc="http://schemas.microsoft.com/ws/2005/12/wsdl/contract" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:wsx="http://schemas.xmlsoap.org/ws/2004/09/mex" xmlns:wsp="http://schemas.xmlsoap.org/ws/2004/09/policy" xmlns:wsam="http://www.w3.org/2007/05/addressing/metadata" xmlns:wsa="http://schemas.xmlsoap.org/ws/2004/08/addressing" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:wsaw="http://www.w3.org/2006/05/addressing/wsdl" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd" xmlns:xsd="http://www.w3.org/2001/XMLSchema" name="BIW_SFM_GUI" targetNamespace="http://tempuri.org/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsp:Policy wsu:Id="WSHttpBinding_IBIW_SFM_GUI_policy">
+    <wsp:ExactlyOne>
+      <wsp:All>
+        <wsaw:UsingAddressing />
+      </wsp:All>
+    </wsp:ExactlyOne>
+  </wsp:Policy>
+  <wsdl:types>
+    <xsd:schema targetNamespace="http://tempuri.org/Imports">
+      <xsd:import schemaLocation="http://abrgoa01apcp03d/BIW_SFM/C191.C191CLA.PLCD_001?xsd=xsd0" namespace="http://tempuri.org/" />
+      <xsd:import schemaLocation="http://abrgoa01apcp03d/BIW_SFM/C191.C191CLA.PLCD_001?xsd=xsd1" namespace="http://schemas.microsoft.com/2003/10/Serialization/" />
+      <xsd:import schemaLocation="http://abrgoa01apcp03d/BIW_SFM/C191.C191CLA.PLCD_001?xsd=xsd2" namespace="http://schemas.datacontract.org/2004/07/BIW_SFM" />
+      <xsd:import schemaLocation="http://abrgoa01apcp03d/BIW_SFM/C191.C191CLA.PLCD_001?xsd=xsd3" />
+    </xsd:schema>
+  </wsdl:types>
+  <wsdl:message name="IBIW_SFM_GUI_Set_ModalitàOperativa_InputMessage">
+    <wsdl:part name="parameters" element="tns:Set_ModalitàOperativa" />
+  </wsdl:message>
+  <wsdl:message name="IBIW_SFM_GUI_Set_ModalitàOperativa_OutputMessage">
+    <wsdl:part name="parameters" element="tns:Set_ModalitàOperativaResponse" />
+  </wsdl:message>
+  <wsdl:message name="IBIW_SFM_GUI_Get_StrutturaProdotto_InputMessage">
+    <wsdl:part name="parameters" element="tns:Get_StrutturaProdotto" />
+  </wsdl:message>
+  <wsdl:message name="IBIW_SFM_GUI_Get_StrutturaProdotto_OutputMessage">
+    <wsdl:part name="parameters" element="tns:Get_StrutturaProdottoResponse" />
+  </wsdl:message>
+  <wsdl:message name="IBIW_SFM_GUI_Set_StrutturaProdotto_InputMessage">
+    <wsdl:part name="parameters" element="tns:Set_StrutturaProdotto" />
+  </wsdl:message>
+  <wsdl:message name="IBIW_SFM_GUI_Set_StrutturaProdotto_OutputMessage">
+    <wsdl:part name="parameters" element="tns:Set_StrutturaProdottoResponse" />
+  </wsdl:message>
+  <wsdl:message name="IBIW_SFM_GUI_Add_NuovoOrdine_InputMessage">
+    <wsdl:part name="parameters" element="tns:Add_NuovoOrdine" />
+  </wsdl:message>
+  <wsdl:message name="IBIW_SFM_GUI_Add_NuovoOrdine_OutputMessage">
+    <wsdl:part name="parameters" element="tns:Add_NuovoOrdineResponse" />
+  </wsdl:message>
+  <wsdl:message name="IBIW_SFM_GUI_Get_Status_InputMessage">
+    <wsdl:part name="parameters" element="tns:Get_Status" />
+  </wsdl:message>
+  <wsdl:message name="IBIW_SFM_GUI_Get_Status_OutputMessage">
+    <wsdl:part name="parameters" element="tns:Get_StatusResponse" />
+  </wsdl:message>
+  <wsdl:message name="IBIW_SFM_GUI_Get_ListaPRG_InputMessage">
+    <wsdl:part name="parameters" element="tns:Get_ListaPRG" />
+  </wsdl:message>
+  <wsdl:message name="IBIW_SFM_GUI_Get_ListaPRG_OutputMessage">
+    <wsdl:part name="parameters" element="tns:Get_ListaPRGResponse" />
+  </wsdl:message>
+  <wsdl:message name="IBIW_SFM_GUI_Get_ListaPRG_Info_InputMessage">
+    <wsdl:part name="parameters" element="tns:Get_ListaPRG_Info" />
+  </wsdl:message>
+  <wsdl:message name="IBIW_SFM_GUI_Get_ListaPRG_Info_OutputMessage">
+    <wsdl:part name="parameters" element="tns:Get_ListaPRG_InfoResponse" />
+  </wsdl:message>
+  <wsdl:message name="IBIW_SFM_GUI_Set_ListaPRG_Size_InputMessage">
+    <wsdl:part name="parameters" element="tns:Set_ListaPRG_Size" />
+  </wsdl:message>
+  <wsdl:message name="IBIW_SFM_GUI_Set_ListaPRG_Size_OutputMessage">
+    <wsdl:part name="parameters" element="tns:Set_ListaPRG_SizeResponse" />
+  </wsdl:message>
+  <wsdl:message name="IBIW_SFM_GUI_Reset_ListaPRG_InputMessage">
+    <wsdl:part name="parameters" element="tns:Reset_ListaPRG" />
+  </wsdl:message>
+  <wsdl:message name="IBIW_SFM_GUI_Reset_ListaPRG_OutputMessage">
+    <wsdl:part name="parameters" element="tns:Reset_ListaPRGResponse" />
+  </wsdl:message>
+  <wsdl:message name="IBIW_SFM_GUI_Shift_ListaPRG_InputMessage">
+    <wsdl:part name="parameters" element="tns:Shift_ListaPRG" />
+  </wsdl:message>
+  <wsdl:message name="IBIW_SFM_GUI_Shift_ListaPRG_OutputMessage">
+    <wsdl:part name="parameters" element="tns:Shift_ListaPRGResponse" />
+  </wsdl:message>
+  <wsdl:message name="IBIW_SFM_GUI_Get_ListaLOIP_InputMessage">
+    <wsdl:part name="parameters" element="tns:Get_ListaLOIP" />
+  </wsdl:message>
+  <wsdl:message name="IBIW_SFM_GUI_Get_ListaLOIP_OutputMessage">
+    <wsdl:part name="parameters" element="tns:Get_ListaLOIPResponse" />
+  </wsdl:message>
+  <wsdl:message name="IBIW_SFM_GUI_Get_ListaLOIP_Info_InputMessage">
+    <wsdl:part name="parameters" element="tns:Get_ListaLOIP_Info" />
+  </wsdl:message>
+  <wsdl:message name="IBIW_SFM_GUI_Get_ListaLOIP_Info_OutputMessage">
+    <wsdl:part name="parameters" element="tns:Get_ListaLOIP_InfoResponse" />
+  </wsdl:message>
+  <wsdl:message name="IBIW_SFM_GUI_Set_ListaLOIP_Size_InputMessage">
+    <wsdl:part name="parameters" element="tns:Set_ListaLOIP_Size" />
+  </wsdl:message>
+  <wsdl:message name="IBIW_SFM_GUI_Set_ListaLOIP_Size_OutputMessage">
+    <wsdl:part name="parameters" element="tns:Set_ListaLOIP_SizeResponse" />
+  </wsdl:message>
+  <wsdl:message name="IBIW_SFM_GUI_Reset_ListaLOIP_InputMessage">
+    <wsdl:part name="parameters" element="tns:Reset_ListaLOIP" />
+  </wsdl:message>
+  <wsdl:message name="IBIW_SFM_GUI_Reset_ListaLOIP_OutputMessage">
+    <wsdl:part name="parameters" element="tns:Reset_ListaLOIPResponse" />
+  </wsdl:message>
+  <wsdl:message name="IBIW_SFM_GUI_Shift_ListaLOIP_InputMessage">
+    <wsdl:part name="parameters" element="tns:Shift_ListaLOIP" />
+  </wsdl:message>
+  <wsdl:message name="IBIW_SFM_GUI_Shift_ListaLOIP_OutputMessage">
+    <wsdl:part name="parameters" element="tns:Shift_ListaLOIPResponse" />
+  </wsdl:message>
+  <wsdl:message name="IBIW_SFM_GUI_Get_PaccoOrdini_InputMessage">
+    <wsdl:part name="parameters" element="tns:Get_PaccoOrdini" />
+  </wsdl:message>
+  <wsdl:message name="IBIW_SFM_GUI_Get_PaccoOrdini_OutputMessage">
+    <wsdl:part name="parameters" element="tns:Get_PaccoOrdiniResponse" />
+  </wsdl:message>
+  <wsdl:message name="IBIW_SFM_GUI_Set_RangePaccoOrdini_InputMessage">
+    <wsdl:part name="parameters" element="tns:Set_RangePaccoOrdini" />
+  </wsdl:message>
+  <wsdl:message name="IBIW_SFM_GUI_Set_RangePaccoOrdini_OutputMessage">
+    <wsdl:part name="parameters" element="tns:Set_RangePaccoOrdiniResponse" />
+  </wsdl:message>
+  <wsdl:message name="IBIW_SFM_GUI_StartProcess_InputMessage">
+    <wsdl:part name="parameters" element="tns:StartProcess" />
+  </wsdl:message>
+  <wsdl:message name="IBIW_SFM_GUI_StartProcess_OutputMessage">
+    <wsdl:part name="parameters" element="tns:StartProcessResponse" />
+  </wsdl:message>
+  <wsdl:message name="IBIW_SFM_GUI_StopProcess_InputMessage">
+    <wsdl:part name="parameters" element="tns:StopProcess" />
+  </wsdl:message>
+  <wsdl:message name="IBIW_SFM_GUI_StopProcess_OutputMessage">
+    <wsdl:part name="parameters" element="tns:StopProcessResponse" />
+  </wsdl:message>
+  <wsdl:message name="IBIW_SFM_GUI_Set_RangeAutogenerante_InputMessage">
+    <wsdl:part name="parameters" element="tns:Set_RangeAutogenerante" />
+  </wsdl:message>
+  <wsdl:message name="IBIW_SFM_GUI_Set_RangeAutogenerante_OutputMessage">
+    <wsdl:part name="parameters" element="tns:Set_RangeAutogeneranteResponse" />
+  </wsdl:message>
+  <wsdl:message name="IBIW_SFM_GUI_Get_StrutturaProdotto_Info_InputMessage">
+    <wsdl:part name="parameters" element="tns:Get_StrutturaProdotto_Info" />
+  </wsdl:message>
+  <wsdl:message name="IBIW_SFM_GUI_Get_StrutturaProdotto_Info_OutputMessage">
+    <wsdl:part name="parameters" element="tns:Get_StrutturaProdotto_InfoResponse" />
+  </wsdl:message>
+  <wsdl:message name="IBIW_SFM_GUI_Get_ConfigFile_InputMessage">
+    <wsdl:part name="parameters" element="tns:Get_ConfigFile" />
+  </wsdl:message>
+  <wsdl:message name="IBIW_SFM_GUI_Get_ConfigFile_OutputMessage">
+    <wsdl:part name="parameters" element="tns:Get_ConfigFileResponse" />
+  </wsdl:message>
+  <wsdl:message name="IBIW_SFM_GUI_ExportPaccoOrdini_InputMessage">
+    <wsdl:part name="parameters" element="tns:ExportPaccoOrdini" />
+  </wsdl:message>
+  <wsdl:message name="IBIW_SFM_GUI_ExportPaccoOrdini_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ExportPaccoOrdiniResponse" />
+  </wsdl:message>
+  <wsdl:message name="IBIW_SFM_GUI_ImportPaccoOrdini_InputMessage">
+    <wsdl:part name="parameters" element="tns:ImportPaccoOrdini" />
+  </wsdl:message>
+  <wsdl:message name="IBIW_SFM_GUI_ImportPaccoOrdini_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ImportPaccoOrdiniResponse" />
+  </wsdl:message>
+  <wsdl:message name="IBIW_SFM_GUI_ExportConfigurazione_InputMessage">
+    <wsdl:part name="parameters" element="tns:ExportConfigurazione" />
+  </wsdl:message>
+  <wsdl:message name="IBIW_SFM_GUI_ExportConfigurazione_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ExportConfigurazioneResponse" />
+  </wsdl:message>
+  <wsdl:message name="IBIW_SFM_GUI_ImportConfigurazione_InputMessage">
+    <wsdl:part name="parameters" element="tns:ImportConfigurazione" />
+  </wsdl:message>
+  <wsdl:message name="IBIW_SFM_GUI_ImportConfigurazione_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ImportConfigurazioneResponse" />
+  </wsdl:message>
+  <wsdl:message name="IBIW_SFM_GUI_SRV_Set_ListaPRG_Size_InputMessage">
+    <wsdl:part name="parameters" element="tns:SRV_Set_ListaPRG_Size" />
+  </wsdl:message>
+  <wsdl:message name="IBIW_SFM_GUI_SRV_Set_ListaPRG_Size_OutputMessage">
+    <wsdl:part name="parameters" element="tns:SRV_Set_ListaPRG_SizeResponse" />
+  </wsdl:message>
+  <wsdl:message name="IBIW_SFM_GUI_SRV_Reset_ListaPRG_InputMessage">
+    <wsdl:part name="parameters" element="tns:SRV_Reset_ListaPRG" />
+  </wsdl:message>
+  <wsdl:message name="IBIW_SFM_GUI_SRV_Reset_ListaPRG_OutputMessage">
+    <wsdl:part name="parameters" element="tns:SRV_Reset_ListaPRGResponse" />
+  </wsdl:message>
+  <wsdl:portType name="IBIW_SFM_GUI">
+    <wsdl:operation name="Set_ModalitàOperativa">
+      <wsdl:input wsaw:Action="http://tempuri.org/IBIW_SFM_GUI/Set_ModalitàOperativa" message="tns:IBIW_SFM_GUI_Set_ModalitàOperativa_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IBIW_SFM_GUI/Set_ModalitàOperativaResponse" message="tns:IBIW_SFM_GUI_Set_ModalitàOperativa_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="Get_StrutturaProdotto">
+      <wsdl:input wsaw:Action="http://tempuri.org/IBIW_SFM_GUI/Get_StrutturaProdotto" message="tns:IBIW_SFM_GUI_Get_StrutturaProdotto_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IBIW_SFM_GUI/Get_StrutturaProdottoResponse" message="tns:IBIW_SFM_GUI_Get_StrutturaProdotto_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="Set_StrutturaProdotto">
+      <wsdl:input wsaw:Action="http://tempuri.org/IBIW_SFM_GUI/Set_StrutturaProdotto" message="tns:IBIW_SFM_GUI_Set_StrutturaProdotto_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IBIW_SFM_GUI/Set_StrutturaProdottoResponse" message="tns:IBIW_SFM_GUI_Set_StrutturaProdotto_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="Add_NuovoOrdine">
+      <wsdl:input wsaw:Action="http://tempuri.org/IBIW_SFM_GUI/Add_NuovoOrdine" message="tns:IBIW_SFM_GUI_Add_NuovoOrdine_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IBIW_SFM_GUI/Add_NuovoOrdineResponse" message="tns:IBIW_SFM_GUI_Add_NuovoOrdine_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="Get_Status">
+      <wsdl:input wsaw:Action="http://tempuri.org/IBIW_SFM_GUI/Get_Status" message="tns:IBIW_SFM_GUI_Get_Status_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IBIW_SFM_GUI/Get_StatusResponse" message="tns:IBIW_SFM_GUI_Get_Status_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="Get_ListaPRG">
+      <wsdl:input wsaw:Action="http://tempuri.org/IBIW_SFM_GUI/Get_ListaPRG" message="tns:IBIW_SFM_GUI_Get_ListaPRG_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IBIW_SFM_GUI/Get_ListaPRGResponse" message="tns:IBIW_SFM_GUI_Get_ListaPRG_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="Get_ListaPRG_Info">
+      <wsdl:input wsaw:Action="http://tempuri.org/IBIW_SFM_GUI/Get_ListaPRG_Info" message="tns:IBIW_SFM_GUI_Get_ListaPRG_Info_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IBIW_SFM_GUI/Get_ListaPRG_InfoResponse" message="tns:IBIW_SFM_GUI_Get_ListaPRG_Info_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="Set_ListaPRG_Size">
+      <wsdl:input wsaw:Action="http://tempuri.org/IBIW_SFM_GUI/Set_ListaPRG_Size" message="tns:IBIW_SFM_GUI_Set_ListaPRG_Size_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IBIW_SFM_GUI/Set_ListaPRG_SizeResponse" message="tns:IBIW_SFM_GUI_Set_ListaPRG_Size_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="Reset_ListaPRG">
+      <wsdl:input wsaw:Action="http://tempuri.org/IBIW_SFM_GUI/Reset_ListaPRG" message="tns:IBIW_SFM_GUI_Reset_ListaPRG_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IBIW_SFM_GUI/Reset_ListaPRGResponse" message="tns:IBIW_SFM_GUI_Reset_ListaPRG_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="Shift_ListaPRG">
+      <wsdl:input wsaw:Action="http://tempuri.org/IBIW_SFM_GUI/Shift_ListaPRG" message="tns:IBIW_SFM_GUI_Shift_ListaPRG_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IBIW_SFM_GUI/Shift_ListaPRGResponse" message="tns:IBIW_SFM_GUI_Shift_ListaPRG_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="Get_ListaLOIP">
+      <wsdl:input wsaw:Action="http://tempuri.org/IBIW_SFM_GUI/Get_ListaLOIP" message="tns:IBIW_SFM_GUI_Get_ListaLOIP_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IBIW_SFM_GUI/Get_ListaLOIPResponse" message="tns:IBIW_SFM_GUI_Get_ListaLOIP_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="Get_ListaLOIP_Info">
+      <wsdl:input wsaw:Action="http://tempuri.org/IBIW_SFM_GUI/Get_ListaLOIP_Info" message="tns:IBIW_SFM_GUI_Get_ListaLOIP_Info_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IBIW_SFM_GUI/Get_ListaLOIP_InfoResponse" message="tns:IBIW_SFM_GUI_Get_ListaLOIP_Info_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="Set_ListaLOIP_Size">
+      <wsdl:input wsaw:Action="http://tempuri.org/IBIW_SFM_GUI/Set_ListaLOIP_Size" message="tns:IBIW_SFM_GUI_Set_ListaLOIP_Size_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IBIW_SFM_GUI/Set_ListaLOIP_SizeResponse" message="tns:IBIW_SFM_GUI_Set_ListaLOIP_Size_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="Reset_ListaLOIP">
+      <wsdl:input wsaw:Action="http://tempuri.org/IBIW_SFM_GUI/Reset_ListaLOIP" message="tns:IBIW_SFM_GUI_Reset_ListaLOIP_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IBIW_SFM_GUI/Reset_ListaLOIPResponse" message="tns:IBIW_SFM_GUI_Reset_ListaLOIP_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="Shift_ListaLOIP">
+      <wsdl:input wsaw:Action="http://tempuri.org/IBIW_SFM_GUI/Shift_ListaLOIP" message="tns:IBIW_SFM_GUI_Shift_ListaLOIP_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IBIW_SFM_GUI/Shift_ListaLOIPResponse" message="tns:IBIW_SFM_GUI_Shift_ListaLOIP_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="Get_PaccoOrdini">
+      <wsdl:input wsaw:Action="http://tempuri.org/IBIW_SFM_GUI/Get_PaccoOrdini" message="tns:IBIW_SFM_GUI_Get_PaccoOrdini_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IBIW_SFM_GUI/Get_PaccoOrdiniResponse" message="tns:IBIW_SFM_GUI_Get_PaccoOrdini_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="Set_RangePaccoOrdini">
+      <wsdl:input wsaw:Action="http://tempuri.org/IBIW_SFM_GUI/Set_RangePaccoOrdini" message="tns:IBIW_SFM_GUI_Set_RangePaccoOrdini_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IBIW_SFM_GUI/Set_RangePaccoOrdiniResponse" message="tns:IBIW_SFM_GUI_Set_RangePaccoOrdini_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="StartProcess">
+      <wsdl:input wsaw:Action="http://tempuri.org/IBIW_SFM_GUI/StartProcess" message="tns:IBIW_SFM_GUI_StartProcess_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IBIW_SFM_GUI/StartProcessResponse" message="tns:IBIW_SFM_GUI_StartProcess_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="StopProcess">
+      <wsdl:input wsaw:Action="http://tempuri.org/IBIW_SFM_GUI/StopProcess" message="tns:IBIW_SFM_GUI_StopProcess_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IBIW_SFM_GUI/StopProcessResponse" message="tns:IBIW_SFM_GUI_StopProcess_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="Set_RangeAutogenerante">
+      <wsdl:input wsaw:Action="http://tempuri.org/IBIW_SFM_GUI/Set_RangeAutogenerante" message="tns:IBIW_SFM_GUI_Set_RangeAutogenerante_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IBIW_SFM_GUI/Set_RangeAutogeneranteResponse" message="tns:IBIW_SFM_GUI_Set_RangeAutogenerante_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="Get_StrutturaProdotto_Info">
+      <wsdl:input wsaw:Action="http://tempuri.org/IBIW_SFM_GUI/Get_StrutturaProdotto_Info" message="tns:IBIW_SFM_GUI_Get_StrutturaProdotto_Info_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IBIW_SFM_GUI/Get_StrutturaProdotto_InfoResponse" message="tns:IBIW_SFM_GUI_Get_StrutturaProdotto_Info_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="Get_ConfigFile">
+      <wsdl:input wsaw:Action="http://tempuri.org/IBIW_SFM_GUI/Get_ConfigFile" message="tns:IBIW_SFM_GUI_Get_ConfigFile_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IBIW_SFM_GUI/Get_ConfigFileResponse" message="tns:IBIW_SFM_GUI_Get_ConfigFile_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ExportPaccoOrdini">
+      <wsdl:input wsaw:Action="http://tempuri.org/IBIW_SFM_GUI/ExportPaccoOrdini" message="tns:IBIW_SFM_GUI_ExportPaccoOrdini_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IBIW_SFM_GUI/ExportPaccoOrdiniResponse" message="tns:IBIW_SFM_GUI_ExportPaccoOrdini_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ImportPaccoOrdini">
+      <wsdl:input wsaw:Action="http://tempuri.org/IBIW_SFM_GUI/ImportPaccoOrdini" message="tns:IBIW_SFM_GUI_ImportPaccoOrdini_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IBIW_SFM_GUI/ImportPaccoOrdiniResponse" message="tns:IBIW_SFM_GUI_ImportPaccoOrdini_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ExportConfigurazione">
+      <wsdl:input wsaw:Action="http://tempuri.org/IBIW_SFM_GUI/ExportConfigurazione" message="tns:IBIW_SFM_GUI_ExportConfigurazione_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IBIW_SFM_GUI/ExportConfigurazioneResponse" message="tns:IBIW_SFM_GUI_ExportConfigurazione_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ImportConfigurazione">
+      <wsdl:input wsaw:Action="http://tempuri.org/IBIW_SFM_GUI/ImportConfigurazione" message="tns:IBIW_SFM_GUI_ImportConfigurazione_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IBIW_SFM_GUI/ImportConfigurazioneResponse" message="tns:IBIW_SFM_GUI_ImportConfigurazione_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="SRV_Set_ListaPRG_Size">
+      <wsdl:input wsaw:Action="http://tempuri.org/IBIW_SFM_GUI/SRV_Set_ListaPRG_Size" message="tns:IBIW_SFM_GUI_SRV_Set_ListaPRG_Size_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IBIW_SFM_GUI/SRV_Set_ListaPRG_SizeResponse" message="tns:IBIW_SFM_GUI_SRV_Set_ListaPRG_Size_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="SRV_Reset_ListaPRG">
+      <wsdl:input wsaw:Action="http://tempuri.org/IBIW_SFM_GUI/SRV_Reset_ListaPRG" message="tns:IBIW_SFM_GUI_SRV_Reset_ListaPRG_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IBIW_SFM_GUI/SRV_Reset_ListaPRGResponse" message="tns:IBIW_SFM_GUI_SRV_Reset_ListaPRG_OutputMessage" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="WSHttpBinding_IBIW_SFM_GUI" type="tns:IBIW_SFM_GUI">
+    <wsp:PolicyReference URI="#WSHttpBinding_IBIW_SFM_GUI_policy" />
+    <soap12:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="Set_ModalitàOperativa">
+      <soap12:operation soapAction="http://tempuri.org/IBIW_SFM_GUI/Set_ModalitàOperativa" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Get_StrutturaProdotto">
+      <soap12:operation soapAction="http://tempuri.org/IBIW_SFM_GUI/Get_StrutturaProdotto" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Set_StrutturaProdotto">
+      <soap12:operation soapAction="http://tempuri.org/IBIW_SFM_GUI/Set_StrutturaProdotto" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Add_NuovoOrdine">
+      <soap12:operation soapAction="http://tempuri.org/IBIW_SFM_GUI/Add_NuovoOrdine" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Get_Status">
+      <soap12:operation soapAction="http://tempuri.org/IBIW_SFM_GUI/Get_Status" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Get_ListaPRG">
+      <soap12:operation soapAction="http://tempuri.org/IBIW_SFM_GUI/Get_ListaPRG" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Get_ListaPRG_Info">
+      <soap12:operation soapAction="http://tempuri.org/IBIW_SFM_GUI/Get_ListaPRG_Info" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Set_ListaPRG_Size">
+      <soap12:operation soapAction="http://tempuri.org/IBIW_SFM_GUI/Set_ListaPRG_Size" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Reset_ListaPRG">
+      <soap12:operation soapAction="http://tempuri.org/IBIW_SFM_GUI/Reset_ListaPRG" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Shift_ListaPRG">
+      <soap12:operation soapAction="http://tempuri.org/IBIW_SFM_GUI/Shift_ListaPRG" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Get_ListaLOIP">
+      <soap12:operation soapAction="http://tempuri.org/IBIW_SFM_GUI/Get_ListaLOIP" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Get_ListaLOIP_Info">
+      <soap12:operation soapAction="http://tempuri.org/IBIW_SFM_GUI/Get_ListaLOIP_Info" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Set_ListaLOIP_Size">
+      <soap12:operation soapAction="http://tempuri.org/IBIW_SFM_GUI/Set_ListaLOIP_Size" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Reset_ListaLOIP">
+      <soap12:operation soapAction="http://tempuri.org/IBIW_SFM_GUI/Reset_ListaLOIP" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Shift_ListaLOIP">
+      <soap12:operation soapAction="http://tempuri.org/IBIW_SFM_GUI/Shift_ListaLOIP" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Get_PaccoOrdini">
+      <soap12:operation soapAction="http://tempuri.org/IBIW_SFM_GUI/Get_PaccoOrdini" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Set_RangePaccoOrdini">
+      <soap12:operation soapAction="http://tempuri.org/IBIW_SFM_GUI/Set_RangePaccoOrdini" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="StartProcess">
+      <soap12:operation soapAction="http://tempuri.org/IBIW_SFM_GUI/StartProcess" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="StopProcess">
+      <soap12:operation soapAction="http://tempuri.org/IBIW_SFM_GUI/StopProcess" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Set_RangeAutogenerante">
+      <soap12:operation soapAction="http://tempuri.org/IBIW_SFM_GUI/Set_RangeAutogenerante" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Get_StrutturaProdotto_Info">
+      <soap12:operation soapAction="http://tempuri.org/IBIW_SFM_GUI/Get_StrutturaProdotto_Info" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Get_ConfigFile">
+      <soap12:operation soapAction="http://tempuri.org/IBIW_SFM_GUI/Get_ConfigFile" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ExportPaccoOrdini">
+      <soap12:operation soapAction="http://tempuri.org/IBIW_SFM_GUI/ExportPaccoOrdini" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ImportPaccoOrdini">
+      <soap12:operation soapAction="http://tempuri.org/IBIW_SFM_GUI/ImportPaccoOrdini" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ExportConfigurazione">
+      <soap12:operation soapAction="http://tempuri.org/IBIW_SFM_GUI/ExportConfigurazione" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ImportConfigurazione">
+      <soap12:operation soapAction="http://tempuri.org/IBIW_SFM_GUI/ImportConfigurazione" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SRV_Set_ListaPRG_Size">
+      <soap12:operation soapAction="http://tempuri.org/IBIW_SFM_GUI/SRV_Set_ListaPRG_Size" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SRV_Reset_ListaPRG">
+      <soap12:operation soapAction="http://tempuri.org/IBIW_SFM_GUI/SRV_Reset_ListaPRG" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="BIW_SFM_GUI">
+    <wsdl:port name="WSHttpBinding_IBIW_SFM_GUI" binding="tns:WSHttpBinding_IBIW_SFM_GUI">
+      <soap12:address location="http://abrgoa01apcp03d/BIW_SFM/C191.C191CLA.PLCD_001" />
+      <wsa10:EndpointReference>
+        <wsa10:Address>http://abrgoa01apcp03d/BIW_SFM/C191.C191CLA.PLCD_001</wsa10:Address>
+      </wsa10:EndpointReference>
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

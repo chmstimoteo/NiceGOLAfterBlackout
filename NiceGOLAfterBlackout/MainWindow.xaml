@@ -1,0 +1,249 @@
+﻿<Window x:Class="NiceGOLAfterBlackout.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:NiceGOLAfterBlackout"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="900.037" Width="1080.0" ContentRendered="Window_ContentRendered">
+    <Grid Name="MainGrid" >
+        <Grid.RowDefinitions>
+            <RowDefinition Height="0.3*" />
+            <RowDefinition Height="1*" />
+            <RowDefinition Height="0.3*" />
+        </Grid.RowDefinitions>
+        <Grid Grid.Row="0">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="0.1*" />
+                <ColumnDefinition Width="1*" />
+                <ColumnDefinition Width="1*" />
+                <ColumnDefinition Width="1*" />
+                <ColumnDefinition Width="0.1*" />
+            </Grid.ColumnDefinitions>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="1*"></RowDefinition>
+                <RowDefinition Height="1*"></RowDefinition>
+                <RowDefinition Height="1*"></RowDefinition>
+            </Grid.RowDefinitions>
+                <Viewbox Grid.Column="3" Grid.Row="1">
+                <Label x:Name="lGOLWebServerStatus" Content="Server Status"></Label>
+                </Viewbox>
+        </Grid>
+        <Grid Grid.Row="1">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="0.1*" />
+                <ColumnDefinition Width="1*" />
+                <ColumnDefinition Width="1*" />
+                <ColumnDefinition Width="1*" />
+                <ColumnDefinition Width="0.1*" />
+            </Grid.ColumnDefinitions>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="1*"></RowDefinition>
+                <RowDefinition Height="1*"></RowDefinition>
+                <RowDefinition Height="1*"></RowDefinition>
+                <RowDefinition Height="1*"></RowDefinition>
+                <RowDefinition Height="1*"></RowDefinition>
+                <RowDefinition Height="1*"></RowDefinition>
+                <RowDefinition Height="1*"></RowDefinition>
+                <RowDefinition Height="1*"></RowDefinition>
+                <RowDefinition Height="1*"></RowDefinition>
+                <RowDefinition Height="1*"></RowDefinition>
+            </Grid.RowDefinitions>
+            <Viewbox  Grid.Column="1" Grid.Row="0" HorizontalAlignment="Left">
+                <CheckBox x:Name="cbTUP" Content="TUP"></CheckBox>
+            </Viewbox>
+            <Viewbox Grid.Column="1" Grid.Row="0" HorizontalAlignment="Center">
+                <Label x:Name="lStatusTUP" Content="STATUS" ></Label>
+            </Viewbox>
+            <Viewbox Grid.Column="1" Grid.Row="1" HorizontalAlignment="Left">
+                <CheckBox x:Name="cbSPJ" Content="SPJ"></CheckBox>
+            </Viewbox>
+            <Viewbox Grid.Column="1" Grid.Row="1" HorizontalAlignment="Center">
+                <Label x:Name="lStatusSPJ" Content="STATUS" ></Label>
+            </Viewbox>
+            <Viewbox Grid.Column="1" Grid.Row="2" HorizontalAlignment="Left">
+                <CheckBox x:Name="cbOFS" Content="OFS"></CheckBox>
+            </Viewbox>
+            <Viewbox Grid.Column="1" Grid.Row="2" HorizontalAlignment="Center">
+                <Label x:Name="lStatusOFS" Content="STATUS" ></Label>
+            </Viewbox>
+            <Viewbox Grid.Column="1" Grid.Row="3" HorizontalAlignment="Left">
+                <CheckBox x:Name="cbFPD" Content="FPD"></CheckBox>
+            </Viewbox>
+            <Viewbox Grid.Column="1" Grid.Row="3" HorizontalAlignment="Center">
+                <Label x:Name="lStatusFPD" Content="STATUS" ></Label>
+            </Viewbox>
+            <Viewbox Grid.Column="1" Grid.Row="4" HorizontalAlignment="Left">
+                <CheckBox x:Name="cbTEA" Content="TEA"></CheckBox>
+            </Viewbox>
+            <Viewbox Grid.Column="1" Grid.Row="4" HorizontalAlignment="Center">
+                <Label x:Name="lStatusTEA" Content="STATUS" ></Label>
+            </Viewbox>
+            <Viewbox Grid.Column="1" Grid.Row="5" HorizontalAlignment="Left">
+                <CheckBox x:Name="cbOFD" Content="OFD"></CheckBox>
+            </Viewbox>
+            <Viewbox Grid.Column="1" Grid.Row="5" HorizontalAlignment="Center">
+                <Label x:Name="lStatusOFD" Content="STATUS" ></Label>
+            </Viewbox>
+            <Viewbox Grid.Column="1" Grid.Row="6" HorizontalAlignment="Left">
+                <CheckBox x:Name="cbFPS" Content="FPS"></CheckBox>
+            </Viewbox>
+            <Viewbox Grid.Column="1" Grid.Row="6" HorizontalAlignment="Center">
+                <Label x:Name="lStatusFPS" Content="STATUS" ></Label>
+            </Viewbox>
+            <Viewbox Grid.Column="1" Grid.Row="7" HorizontalAlignment="Left">
+                <CheckBox x:Name="cbPPA" Content="PPA"></CheckBox>
+            </Viewbox>
+            <Viewbox Grid.Column="1" Grid.Row="7" HorizontalAlignment="Center">
+                <Label x:Name="lStatusPPA" Content="STATUS" ></Label>
+            </Viewbox>
+            <Viewbox Grid.Column="1" Grid.Row="8" HorizontalAlignment="Left">
+                <CheckBox x:Name="cbAUC" Content="AUC"></CheckBox>
+            </Viewbox>
+            <Viewbox Grid.Column="1" Grid.Row="8" HorizontalAlignment="Center">
+                <Label x:Name="lStatusAUC" Content="STATUS" ></Label>
+            </Viewbox>
+            <Viewbox Grid.Column="1" Grid.Row="9" HorizontalAlignment="Left">
+                <CheckBox x:Name="cbAUE" Content="AUE"></CheckBox>
+            </Viewbox>
+            <Viewbox Grid.Column="1" Grid.Row="9" HorizontalAlignment="Center">
+                <Label x:Name="lStatusAUE" Content="STATUS" ></Label>
+            </Viewbox>
+            <Viewbox Grid.Column="2" Grid.Row="0" HorizontalAlignment="Left">
+                <CheckBox x:Name="cbCOF" Content="COF"></CheckBox>
+            </Viewbox>
+            <Viewbox Grid.Column="2" Grid.Row="0" HorizontalAlignment="Center">
+                <Label x:Name="lStatusCOF" Content="STATUS" ></Label>
+            </Viewbox>
+            <Viewbox Grid.Column="2" Grid.Row="1" HorizontalAlignment="Left">
+                <CheckBox x:Name="cbFDA" Content="FDA"></CheckBox>
+            </Viewbox>
+            <Viewbox Grid.Column="2" Grid.Row="1" HorizontalAlignment="Center">
+                <Label x:Name="lStatusFDA" Content="STATUS" ></Label>
+            </Viewbox>
+            <Viewbox Grid.Column="2" Grid.Row="2" HorizontalAlignment="Left">
+                <CheckBox x:Name="cbFSA" Content="FSA"></CheckBox>
+            </Viewbox>
+            <Viewbox Grid.Column="2" Grid.Row="2" HorizontalAlignment="Center">
+                <Label x:Name="lStatusFSA" Content="STATUS" ></Label>
+            </Viewbox>
+            <Viewbox Grid.Column="2" Grid.Row="3" HorizontalAlignment="Left">
+                <CheckBox x:Name="cbPLCD" Content="PLCD"></CheckBox>
+            </Viewbox>
+            <Viewbox Grid.Column="2" Grid.Row="3" HorizontalAlignment="Center">
+                <Label x:Name="lStatusPLCD" Content="STATUS" ></Label>
+            </Viewbox>
+            <Viewbox Grid.Column="2" Grid.Row="4" HorizontalAlignment="Left">
+                <CheckBox x:Name="cbPLCS" Content="PLCS"></CheckBox>
+            </Viewbox>
+            <Viewbox Grid.Column="2" Grid.Row="4" HorizontalAlignment="Center">
+                <Label x:Name="lStatusPLCS" Content="STATUS" ></Label>
+            </Viewbox>
+            <Viewbox Grid.Column="2" Grid.Row="5" HorizontalAlignment="Left">
+                <CheckBox x:Name="cbPLD" Content="PLD"></CheckBox>
+            </Viewbox>
+            <Viewbox Grid.Column="2" Grid.Row="5" HorizontalAlignment="Center">
+                <Label x:Name="lStatusPLD" Content="STATUS" ></Label>
+            </Viewbox>
+            <Viewbox Grid.Column="2" Grid.Row="6" HorizontalAlignment="Left">
+                <CheckBox x:Name="cbPLS" Content="PLS"></CheckBox>
+            </Viewbox>
+            <Viewbox Grid.Column="2" Grid.Row="6" HorizontalAlignment="Center">
+                <Label x:Name="lStatusPLS" Content="STATUS" ></Label>
+            </Viewbox>
+            <Viewbox Grid.Column="2" Grid.Row="7" HorizontalAlignment="Left">
+                <CheckBox x:Name="cbPPCD" Content="PPCD"></CheckBox>
+            </Viewbox>
+            <Viewbox Grid.Column="2" Grid.Row="7" HorizontalAlignment="Center">
+                <Label x:Name="lStatusPPCD" Content="STATUS" ></Label>
+            </Viewbox>
+            <Viewbox Grid.Column="2" Grid.Row="8" HorizontalAlignment="Left">
+                <CheckBox x:Name="cbPPCS" Content="PPCS"></CheckBox>
+            </Viewbox>
+            <Viewbox Grid.Column="2" Grid.Row="8" HorizontalAlignment="Center">
+                <Label x:Name="lStatusPPCS" Content="STATUS" ></Label>
+            </Viewbox>
+            <Viewbox Grid.Column="2" Grid.Row="9" HorizontalAlignment="Left">
+                <CheckBox x:Name="cbPPD" Content="PPD"></CheckBox>
+            </Viewbox>
+            <Viewbox Grid.Column="2" Grid.Row="9" HorizontalAlignment="Center">
+                <Label x:Name="lStatusPPD" Content="STATUS" ></Label>
+            </Viewbox>
+            <Viewbox Grid.Column="3" Grid.Row="0" HorizontalAlignment="Left">
+                <CheckBox x:Name="cbPPP" Content="PPP"></CheckBox>
+            </Viewbox>
+            <Viewbox Grid.Column="3" Grid.Row="0" HorizontalAlignment="Center">
+                <Label x:Name="lStatusPPP" Content="STATUS" ></Label>
+            </Viewbox>
+            <Viewbox Grid.Column="3" Grid.Row="1" HorizontalAlignment="Left">
+                <CheckBox x:Name="cbPPS" Content="PPS"></CheckBox>
+            </Viewbox>
+            <Viewbox Grid.Column="3" Grid.Row="1" HorizontalAlignment="Center">
+                <Label x:Name="lStatusPPS" Content="STATUS" ></Label>
+            </Viewbox>
+            <Viewbox Grid.Column="3" Grid.Row="2" HorizontalAlignment="Left">
+                <CheckBox x:Name="cbPRD" Content="PRD"></CheckBox>
+            </Viewbox>
+            <Viewbox Grid.Column="3" Grid.Row="2" HorizontalAlignment="Center">
+                <Label x:Name="lStatusPRD" Content="STATUS" ></Label>
+            </Viewbox>
+            <Viewbox Grid.Column="3" Grid.Row="3" HorizontalAlignment="Left">
+                <CheckBox x:Name="cbPRS" Content="PRS"></CheckBox>
+            </Viewbox>
+            <Viewbox Grid.Column="3" Grid.Row="3" HorizontalAlignment="Center">
+                <Label x:Name="lStatusPRS" Content="STATUS" ></Label>
+            </Viewbox>
+            <Viewbox Grid.Column="3" Grid.Row="4" HorizontalAlignment="Left">
+                <CheckBox x:Name="cbSCC" Content="SCC"></CheckBox>
+            </Viewbox>
+            <Viewbox Grid.Column="3" Grid.Row="4" HorizontalAlignment="Center">
+                <Label x:Name="lStatusSCC" Content="STATUS" ></Label>
+            </Viewbox>
+            <Viewbox Grid.Column="3" Grid.Row="5" HorizontalAlignment="Left">
+                <CheckBox x:Name="cbSCE" Content="SCE"></CheckBox>
+            </Viewbox>
+            <Viewbox Grid.Column="3" Grid.Row="5" HorizontalAlignment="Center">
+                <Label x:Name="lStatusSCE" Content="STATUS" ></Label>
+            </Viewbox>
+            <Viewbox Grid.Column="3" Grid.Row="6" HorizontalAlignment="Left">
+                <CheckBox x:Name="cbSPG" Content="SPG"></CheckBox>
+            </Viewbox>
+            <Viewbox Grid.Column="3" Grid.Row="6" HorizontalAlignment="Center">
+                <Label x:Name="lStatusSPG" Content="STATUS" ></Label>
+            </Viewbox>
+            <Viewbox Grid.Column="3" Grid.Row="7" HorizontalAlignment="Left">
+                <CheckBox x:Name="cbTPF" Content="TPF"></CheckBox>
+            </Viewbox>
+            <Viewbox Grid.Column="3" Grid.Row="7" HorizontalAlignment="Center">
+                <Label x:Name="lStatusTPF" Content="STATUS" ></Label>
+            </Viewbox>
+            <Viewbox Grid.Column="3" Grid.Row="8" HorizontalAlignment="Left">
+                <CheckBox x:Name="cbPAN" Content="PAN" ></CheckBox>
+            </Viewbox>
+            <Viewbox Grid.Column="3" Grid.Row="8" HorizontalAlignment="Center">
+                <Label x:Name="lStatusPAN" Content="STATUS" ></Label>
+            </Viewbox>
+            <Grid Grid.Column="3" Grid.Row="9">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="0.2*"></ColumnDefinition>
+                    <ColumnDefinition Width="1*"></ColumnDefinition>
+                    <ColumnDefinition Width="0.2*"></ColumnDefinition>
+                    <ColumnDefinition Width="1.5*"></ColumnDefinition>
+                    <ColumnDefinition Width="0.2*"></ColumnDefinition>
+                    <ColumnDefinition Width="1*"></ColumnDefinition>
+                    <ColumnDefinition Width="0.2*"></ColumnDefinition>
+                </Grid.ColumnDefinitions>
+                <Viewbox Grid.Column="1">
+                    <Button x:Name="btStartSelected" Content="Start" Click="btStartSelected_Click"></Button>
+                </Viewbox>
+                <Viewbox Grid.Column="3">
+                    <Button x:Name="btMarkUnmark" Content="Unmark All" Click="btMarkUnmark_Click"/>
+                </Viewbox>
+                <Viewbox Grid.Column="5">
+                    <Button x:Name="btStopSelected" Content="Stop" Click="btStopSelected_Click"></Button>
+                </Viewbox>
+            </Grid>
+            
+        </Grid>
+    </Grid>
+</Window>
